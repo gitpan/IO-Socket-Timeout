@@ -8,7 +8,7 @@
 #
 package PerlIO::via::Timeout::Strategy::SetSockOpt;
 {
-  $PerlIO::via::Timeout::Strategy::SetSockOpt::VERSION = '0.10';
+  $PerlIO::via::Timeout::Strategy::SetSockOpt::VERSION = '0.11';
 }
 
 # ABSTRACT: a L<PerlIO::via::Timeout::Strategy>, the uses setsockopt
@@ -131,6 +131,7 @@ sub is_valid { $_[0] && ! $_[0]->{_is_invalid} }
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -139,7 +140,7 @@ PerlIO::via::Timeout::Strategy::SetSockOpt - a L<PerlIO::via::Timeout::Strategy>
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 SYNOPSIS
 
@@ -201,4 +202,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

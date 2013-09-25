@@ -8,7 +8,7 @@
 #
 package IO::Socket::Timeout;
 {
-  $IO::Socket::Timeout::VERSION = '0.10';
+  $IO::Socket::Timeout::VERSION = '0.11';
 }
 
 use strict;
@@ -21,12 +21,8 @@ use Carp;
 # ABSTRACT: IO::Socket with read/write timeout
 
 
-use Class::Method::Modifiers qw(install_modifier);
-
-use Config;
-
 our %TIMEOUT_CLASS;
-our $DEFAULT_STRATEGY = $Config{osname} ne 'netbsd' && $Config{osname} ne 'solaris' ? 'SetSockOpt' : 'Select';
+our $DEFAULT_STRATEGY = $^O ne 'netbsd' && $^O ne 'solaris' ? 'SetSockOpt' : 'Select';
 
 
 sub import {
@@ -118,6 +114,7 @@ sub socketpair::with::timeout {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -126,7 +123,7 @@ IO::Socket::Timeout - IO::Socket with read/write timeout
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 SYNOPSIS
 
@@ -351,4 +348,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

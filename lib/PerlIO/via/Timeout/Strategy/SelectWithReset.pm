@@ -8,7 +8,7 @@
 #
 package PerlIO::via::Timeout::Strategy::SelectWithReset;
 {
-  $PerlIO::via::Timeout::Strategy::SelectWithReset::VERSION = '0.10';
+  $PerlIO::via::Timeout::Strategy::SelectWithReset::VERSION = '0.11';
 }
 
 # ABSTRACT: like L<PerlIO::via::Timeout::Strategy::Select>, but ECONNRESET after timeout
@@ -56,6 +56,7 @@ sub is_valid { $_[0] && ! $_[0]->{_is_invalid} }
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -64,7 +65,7 @@ PerlIO::via::Timeout::Strategy::SelectWithReset - like L<PerlIO::via::Timeout::S
 
 =head1 VERSION
 
-version 0.10
+version 0.11
 
 =head1 SYNOPSIS
 
@@ -129,4 +130,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
