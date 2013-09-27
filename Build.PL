@@ -18,7 +18,7 @@ my %module_build_args = (
     "Damien \"dams\" Krotkine"
   ],
   "dist_name" => "IO-Socket-Timeout",
-  "dist_version" => "0.11",
+  "dist_version" => "0.12",
   "license" => "perl",
   "module_name" => "IO::Socket::Timeout",
   "recommends" => {},

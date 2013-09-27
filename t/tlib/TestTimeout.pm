@@ -12,7 +12,6 @@ use strict;
 use warnings;
 
 use Test::More;
-use Test::Exception;
 use IO::Socket::Timeout;
 use Test::TCP;
 use POSIX qw(ETIMEDOUT ECONNRESET strerror);

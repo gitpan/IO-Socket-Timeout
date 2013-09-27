@@ -8,7 +8,7 @@
 #
 package PerlIO::via::Timeout::Strategy::SelectWithReset;
 {
-  $PerlIO::via::Timeout::Strategy::SelectWithReset::VERSION = '0.11';
+  $PerlIO::via::Timeout::Strategy::SelectWithReset::VERSION = '0.12';
 }
 
 # ABSTRACT: like L<PerlIO::via::Timeout::Strategy::Select>, but ECONNRESET after timeout
@@ -65,7 +65,7 @@ PerlIO::via::Timeout::Strategy::SelectWithReset - like L<PerlIO::via::Timeout::S
 
 =head1 VERSION
 
-version 0.11
+version 0.12
 
 =head1 SYNOPSIS
 

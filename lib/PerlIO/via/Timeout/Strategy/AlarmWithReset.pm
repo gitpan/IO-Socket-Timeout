@@ -8,7 +8,7 @@
 #
 package PerlIO::via::Timeout::Strategy::AlarmWithReset;
 {
-  $PerlIO::via::Timeout::Strategy::AlarmWithReset::VERSION = '0.11';
+  $PerlIO::via::Timeout::Strategy::AlarmWithReset::VERSION = '0.12';
 }
 
 # ABSTRACT: like L<PerlIO::via::Timeout::Strategy::Alarm>, but ECONNRESET after timeout
@@ -71,7 +71,7 @@ PerlIO::via::Timeout::Strategy::AlarmWithReset - like L<PerlIO::via::Timeout::St
 
 =head1 VERSION
 
-version 0.11
+version 0.12
 
 =head1 SYNOPSIS
 

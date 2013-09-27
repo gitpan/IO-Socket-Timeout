@@ -8,7 +8,7 @@
 #
 package PerlIO::via::Timeout::Strategy::SetSockOpt;
 {
-  $PerlIO::via::Timeout::Strategy::SetSockOpt::VERSION = '0.11';
+  $PerlIO::via::Timeout::Strategy::SetSockOpt::VERSION = '0.12';
 }
 
 # ABSTRACT: a L<PerlIO::via::Timeout::Strategy>, the uses setsockopt
@@ -140,7 +140,7 @@ PerlIO::via::Timeout::Strategy::SetSockOpt - a L<PerlIO::via::Timeout::Strategy>
 
 =head1 VERSION
 
-version 0.11
+version 0.12
 
 =head1 SYNOPSIS
 
