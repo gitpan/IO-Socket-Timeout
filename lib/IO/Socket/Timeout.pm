@@ -8,7 +8,7 @@
 #
 package IO::Socket::Timeout;
 {
-  $IO::Socket::Timeout::VERSION = '0.12';
+  $IO::Socket::Timeout::VERSION = '0.13';
 }
 
 use strict;
@@ -114,7 +114,6 @@ sub socketpair::with::timeout {
 1;
 
 __END__
-
 =pod
 
 =head1 NAME
@@ -123,7 +122,7 @@ IO::Socket::Timeout - IO::Socket with read/write timeout
 
 =head1 VERSION
 
-version 0.12
+version 0.13
 
 =head1 SYNOPSIS
 
@@ -348,3 +347,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+

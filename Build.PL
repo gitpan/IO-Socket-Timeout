@@ -18,7 +18,7 @@ my %module_build_args = (
     "Damien \"dams\" Krotkine"
   ],
   "dist_name" => "IO-Socket-Timeout",
-  "dist_version" => "0.12",
+  "dist_version" => "0.13",
   "license" => "perl",
   "module_name" => "IO::Socket::Timeout",
   "recommends" => {},
@@ -29,10 +29,11 @@ my %module_build_args = (
   },
   "script_files" => [],
   "test_requires" => {
-    "Capture::Tiny" => 0,
-    "Test::More" => "0.88",
-    "Test::TCP" => 0,
-    "blib" => 0
+    "File::Spec" => 0,
+    "IO::Handle" => 0,
+    "IPC::Open3" => 0,
+    "Test::More" => 0,
+    "Test::TCP" => 0
   }
 );
 
