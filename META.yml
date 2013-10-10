@@ -22,19 +22,13 @@ name: IO-Socket-Timeout
 provides:
   IO::Socket::Timeout:
     file: lib/IO/Socket/Timeout.pm
-    version: 0.14
-  PerlIO::via::Timeout::Strategy::AlarmWithReset:
-    file: lib/PerlIO/via/Timeout/Strategy/AlarmWithReset.pm
-    version: 0.14
-  PerlIO::via::Timeout::Strategy::SelectWithReset:
-    file: lib/PerlIO/via/Timeout/Strategy/SelectWithReset.pm
-    version: 0.14
-  PerlIO::via::Timeout::Strategy::SetSockOpt:
-    file: lib/PerlIO/via/Timeout/Strategy/SetSockOpt.pm
-    version: 0.14
+    version: 0.15
+  PerlIO::via::TimeoutWithReset:
+    file: lib/PerlIO/via/TimeoutWithReset.pm
+    version: 0.15
 requires:
-  PerlIO::via::Timeout: 0.18
-  Socket: 0
+  PerlIO::via::Timeout: 0.23
 resources:
+  bugtracker: https://github.com/dams/io-socket-timeout/issues
   repository: git://github.com/dams/io-socket-timeout.git
-version: 0.14
+version: 0.15

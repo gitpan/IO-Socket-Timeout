@@ -1,7 +1,7 @@
 
 
 This archive contains the distribution IO-Socket-Timeout,
-version 0.14:
+version 0.15:
 
   IO::Socket with read/write timeout
 

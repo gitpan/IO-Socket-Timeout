@@ -3,15 +3,13 @@ use warnings;
 
 # this test was generated with Dist::Zilla::Plugin::Test::Compile 2.033
 
-use Test::More  tests => 4 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
+use Test::More  tests => 2 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
 
 
 
 my @module_files = (
     'IO/Socket/Timeout.pm',
-    'PerlIO/via/Timeout/Strategy/AlarmWithReset.pm',
-    'PerlIO/via/Timeout/Strategy/SelectWithReset.pm',
-    'PerlIO/via/Timeout/Strategy/SetSockOpt.pm'
+    'PerlIO/via/TimeoutWithReset.pm'
 );
 
 

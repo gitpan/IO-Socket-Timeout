@@ -23,8 +23,7 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "IO::Socket::Timeout",
   "PREREQ_PM" => {
-    "PerlIO::via::Timeout" => "0.18",
-    "Socket" => 0
+    "PerlIO::via::Timeout" => "0.23"
   },
   "TEST_REQUIRES" => {
     "File::Spec" => 0,
@@ -33,7 +32,7 @@ my %WriteMakefileArgs = (
     "Test::More" => 0,
     "Test::TCP" => 0
   },
-  "VERSION" => "0.14",
+  "VERSION" => "0.15",
   "test" => {
     "TESTS" => "t/*.t"
   }
