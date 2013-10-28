@@ -13,7 +13,7 @@ configure_requires:
   ExtUtils::MakeMaker: 6.30
   Module::Build: 0.3601
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300035, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Zilla version 4.300039, CPAN::Meta::Converter version 2.132830'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -22,13 +22,12 @@ name: IO-Socket-Timeout
 provides:
   IO::Socket::Timeout:
     file: lib/IO/Socket/Timeout.pm
-    version: 0.15
+    version: 0.16
   PerlIO::via::TimeoutWithReset:
     file: lib/PerlIO/via/TimeoutWithReset.pm
-    version: 0.15
+    version: 0.16
 requires:
-  PerlIO::via::Timeout: 0.23
+  PerlIO::via::Timeout: 0.24
 resources:
-  bugtracker: https://github.com/dams/io-socket-timeout/issues
   repository: git://github.com/dams/io-socket-timeout.git
-version: 0.15
+version: 0.16

@@ -8,7 +8,7 @@
 #
 package PerlIO::via::TimeoutWithReset;
 {
-  $PerlIO::via::TimeoutWithReset::VERSION = '0.15';
+  $PerlIO::via::TimeoutWithReset::VERSION = '0.16';
 }
 
 use strict;
@@ -46,6 +46,7 @@ sub WRITE {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -54,7 +55,7 @@ PerlIO::via::TimeoutWithReset
 
 =head1 VERSION
 
-version 0.15
+version 0.16
 
 =head1 AUTHOR
 
@@ -68,4 +69,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
