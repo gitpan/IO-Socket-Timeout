@@ -18,13 +18,14 @@ my %module_build_args = (
     "Damien \"dams\" Krotkine"
   ],
   "dist_name" => "IO-Socket-Timeout",
-  "dist_version" => "0.16",
+  "dist_version" => "0.17",
   "license" => "perl",
   "module_name" => "IO::Socket::Timeout",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
-    "PerlIO::via::Timeout" => "0.24"
+    "PerlIO::via::Timeout" => "0.24",
+    "Role::Tiny" => 0
   },
   "script_files" => [],
   "test_requires" => {

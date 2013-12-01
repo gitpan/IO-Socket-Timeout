@@ -22,12 +22,16 @@ name: IO-Socket-Timeout
 provides:
   IO::Socket::Timeout:
     file: lib/IO/Socket/Timeout.pm
-    version: 0.16
+    version: 0.17
+  IO::Socket::Timeout::Role::SysTimeout:
+    file: lib/IO/Socket/Timeout.pm
+    version: 0.17
   PerlIO::via::TimeoutWithReset:
     file: lib/PerlIO/via/TimeoutWithReset.pm
-    version: 0.16
+    version: 0.17
 requires:
   PerlIO::via::Timeout: 0.24
+  Role::Tiny: 0
 resources:
   repository: git://github.com/dams/io-socket-timeout.git
-version: 0.16
+version: 0.17
