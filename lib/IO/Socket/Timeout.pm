@@ -8,7 +8,7 @@
 #
 package IO::Socket::Timeout;
 {
-  $IO::Socket::Timeout::VERSION = '0.18';
+  $IO::Socket::Timeout::VERSION = '0.19';
 }
 
 use strict;
@@ -169,7 +169,7 @@ BEGIN {
 
 package IO::Socket::Timeout::Role::SetSockOpt;
 {
-  $IO::Socket::Timeout::Role::SetSockOpt::VERSION = '0.18';
+  $IO::Socket::Timeout::Role::SetSockOpt::VERSION = '0.19';
 }
 use Carp;
 use Socket;
@@ -229,7 +229,7 @@ sub _set_sock_opt {
 
 package IO::Socket::Timeout::Role::PerlIO;
 {
-  $IO::Socket::Timeout::Role::PerlIO::VERSION = '0.18';
+  $IO::Socket::Timeout::Role::PerlIO::VERSION = '0.19';
 }
 use PerlIO::via::Timeout;
 
@@ -251,7 +251,7 @@ IO::Socket::Timeout - IO::Socket with read/write timeout
 
 =head1 VERSION
 
-version 0.18
+version 0.19
 
 =head1 SYNOPSIS
 

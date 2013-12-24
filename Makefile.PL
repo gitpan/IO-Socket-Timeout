@@ -7,8 +7,8 @@ use warnings;
 
 BEGIN {
 my %configure_requires = (
-    'Module::Build::Tiny' => '0.030',
     'ExtUtils::MakeMaker' => '6.30',
+    'Module::Build::Tiny' => '0.030',
 );
 
 my @missing = grep {
@@ -79,7 +79,7 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "IO::Socket::Timeout",
   "PREREQ_PM" => {
-    "PerlIO::via::Timeout" => "0.27"
+    "PerlIO::via::Timeout" => "0.28"
   },
   "TEST_REQUIRES" => {
     "File::Spec" => 0,
@@ -88,7 +88,7 @@ my %WriteMakefileArgs = (
     "Test::More" => 0,
     "Test::TCP" => 0
   },
-  "VERSION" => "0.18",
+  "VERSION" => "0.19",
   "test" => {
     "TESTS" => "t/*.t"
   }
