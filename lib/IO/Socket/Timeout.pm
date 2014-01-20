@@ -8,7 +8,7 @@
 #
 package IO::Socket::Timeout;
 {
-  $IO::Socket::Timeout::VERSION = '0.22';
+  $IO::Socket::Timeout::VERSION = '0.23';
 }
 
 use strict;
@@ -18,6 +18,15 @@ use Carp;
 
 
 # ABSTRACT: IO::Socket with read/write timeout
+
+
+sub import {
+    shift;
+    foreach (@_) {
+        _create_composed_class( $_, 'IO::Socket::Timeout::Role::SetSockOpt');
+        _create_composed_class( $_, 'IO::Socket::Timeout::Role::PerlIO');
+    }
+}
 
 
 sub enable_timeouts_on {
@@ -41,9 +50,8 @@ sub enable_timeouts_on {
     return $socket;
 }
 
-sub _compose_roles {
-    my ($instance, @roles) = @_;
-    my $class = ref $instance;
+sub _create_composed_class {
+    my ($class, @roles) = @_;
     my $composed_class = $class . '__with__' . join('__and__', @roles);
     my $path = $composed_class; $path =~ s|::|/|g; $path .= '.pm';
     if ( ! exists $INC{$path}) {
@@ -51,7 +59,12 @@ sub _compose_roles {
         *{"${composed_class}::ISA"} = [ $class, @roles ];
         $INC{$path} = __FILE__;
     }
-    bless $instance, $composed_class;
+    return $composed_class;
+}
+
+sub _compose_roles {
+    my ($instance, @roles) = @_;
+    bless $instance, _create_composed_class(ref $instance, @roles);
 }
 
 # sysread FILEHANDLE,SCALAR,LENGTH,OFFSET
@@ -98,7 +111,7 @@ BEGIN {
 
 package IO::Socket::Timeout::Role::SetSockOpt;
 {
-  $IO::Socket::Timeout::Role::SetSockOpt::VERSION = '0.22';
+  $IO::Socket::Timeout::Role::SetSockOpt::VERSION = '0.23';
 }
 use Carp;
 use Socket;
@@ -158,7 +171,7 @@ sub _set_sock_opt {
 
 package IO::Socket::Timeout::Role::PerlIO;
 {
-  $IO::Socket::Timeout::Role::PerlIO::VERSION = '0.22';
+  $IO::Socket::Timeout::Role::PerlIO::VERSION = '0.23';
 }
 use PerlIO::via::Timeout;
 
@@ -174,13 +187,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 IO::Socket::Timeout - IO::Socket with read/write timeout
 
 =head1 VERSION
 
-version 0.22
+version 0.23
 
 =head1 SYNOPSIS
 
@@ -297,6 +312,13 @@ third-party module, like C<Action::Retry>. Something like this:
   );
 
   my $reply = $action->run('GET mykey');
+
+=head1 IMPORT options
+
+You can give a list of socket modules names when use-ing this module, so that
+internally, composed classes needed gets created and loaded at compile time.
+
+  use IO::Socket::With::Timeout qw(IO::Socket::INET);
 
 =head1 ENVIRONMENT VARIABLE
 
