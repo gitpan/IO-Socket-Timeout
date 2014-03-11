@@ -8,7 +8,7 @@
 #
 package IO::Socket::Timeout;
 {
-  $IO::Socket::Timeout::VERSION = '0.23';
+  $IO::Socket::Timeout::VERSION = '0.24';
 }
 
 use strict;
@@ -111,7 +111,7 @@ BEGIN {
 
 package IO::Socket::Timeout::Role::SetSockOpt;
 {
-  $IO::Socket::Timeout::Role::SetSockOpt::VERSION = '0.23';
+  $IO::Socket::Timeout::Role::SetSockOpt::VERSION = '0.24';
 }
 use Carp;
 use Socket;
@@ -171,7 +171,7 @@ sub _set_sock_opt {
 
 package IO::Socket::Timeout::Role::PerlIO;
 {
-  $IO::Socket::Timeout::Role::PerlIO::VERSION = '0.23';
+  $IO::Socket::Timeout::Role::PerlIO::VERSION = '0.24';
 }
 use PerlIO::via::Timeout;
 
@@ -195,11 +195,11 @@ IO::Socket::Timeout - IO::Socket with read/write timeout
 
 =head1 VERSION
 
-version 0.23
+version 0.24
 
 =head1 SYNOPSIS
 
-  use IO::Socket::With::Timeout;
+  use IO::Socket::Timeout;
 
   # creates a standard IO::Socket::INET object, with a connection timeout
   my $socket = IO::Socket::INET->new( Timeout => 2 );
@@ -318,7 +318,7 @@ third-party module, like C<Action::Retry>. Something like this:
 You can give a list of socket modules names when use-ing this module, so that
 internally, composed classes needed gets created and loaded at compile time.
 
-  use IO::Socket::With::Timeout qw(IO::Socket::INET);
+  use IO::Socket::Timeout qw(IO::Socket::INET);
 
 =head1 ENVIRONMENT VARIABLE
 
