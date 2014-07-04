@@ -8,7 +8,7 @@
 #
 package IO::Socket::Timeout;
 {
-  $IO::Socket::Timeout::VERSION = '0.24';
+  $IO::Socket::Timeout::VERSION = '0.25';
 }
 
 use strict;
@@ -38,7 +38,7 @@ sub enable_timeouts_on {
 
     my $osname = $Config{osname};
     if ( ! $ENV{PERL_IO_SOCKET_TIMEOUT_FORCE_SELECT}
-         && ( $osname eq 'darwin' || $osname eq 'linux' ) ) {
+         && ( $osname eq 'darwin' || $osname eq 'linux' || $osname eq 'freebsd' ) ) {
         _compose_roles($socket, 'IO::Socket::Timeout::Role::SetSockOpt');
     } else {
         require PerlIO::via::Timeout;
@@ -71,7 +71,7 @@ sub _compose_roles {
 BEGIN {
     my $osname = $Config{osname};
     if ( $ENV{PERL_IO_SOCKET_TIMEOUT_FORCE_SELECT} ||
-         $osname ne 'darwin' && $osname ne 'linux'
+         $osname ne 'darwin' && $osname ne 'linux' && $osname ne 'freebsd'
        ) {
         # this variable avoids infinite recursion, because
         # PerlIO::via::Timeout->READ calls sysread.
@@ -92,7 +92,7 @@ BEGIN {
 BEGIN {
     my $osname = $Config{osname};
     if ( $ENV{PERL_IO_SOCKET_TIMEOUT_FORCE_SELECT} ||
-         $osname ne 'darwin' && $osname ne 'linux'
+         $osname ne 'darwin' && $osname ne 'linux' && $osname ne 'freebsd'
        ) {
         # this variable avoids infinite recursion, because
         # PerlIO::via::Timeout->WRITE calls syswrite.
@@ -111,7 +111,7 @@ BEGIN {
 
 package IO::Socket::Timeout::Role::SetSockOpt;
 {
-  $IO::Socket::Timeout::Role::SetSockOpt::VERSION = '0.24';
+  $IO::Socket::Timeout::Role::SetSockOpt::VERSION = '0.25';
 }
 use Carp;
 use Socket;
@@ -171,7 +171,7 @@ sub _set_sock_opt {
 
 package IO::Socket::Timeout::Role::PerlIO;
 {
-  $IO::Socket::Timeout::Role::PerlIO::VERSION = '0.24';
+  $IO::Socket::Timeout::Role::PerlIO::VERSION = '0.25';
 }
 use PerlIO::via::Timeout;
 
@@ -195,7 +195,7 @@ IO::Socket::Timeout - IO::Socket with read/write timeout
 
 =head1 VERSION
 
-version 0.24
+version 0.25
 
 =head1 SYNOPSIS
 
