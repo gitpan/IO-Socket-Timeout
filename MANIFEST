@@ -13,6 +13,7 @@ t/io_unix.t
 t/preload.t
 t/release-distmeta.t
 t/release-pod-coverage.t
+t/release-synopsis.t
 t/timeout.t
 t/timeout_setsockopt.t
 t/tlib/TestTimeout.pm
